@@ -1,5 +1,6 @@
 type Query {
   hello(name: String!): String!
+  todos: [Todo]
 }
 
 type Todo {
@@ -10,4 +11,6 @@ type Todo {
 
 type Mutation {
   createTodo(text: String!): Todo
+  updateTodo(id: ID!, complete: Boolean): Boolean
+  removeTodo(id:ID!): Boolean
 }
